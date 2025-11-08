@@ -1,28 +1,37 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import Showcase from './components/Showcase';
+import Contact from './components/Contact';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function Footer() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <footer className="relative z-10 border-t border-white/10 bg-[#07070a] py-10 text-center">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <div className="flex items-center gap-2">
+            <div className="h-6 w-6 rounded-md bg-gradient-to-br from-cyan-400 to-fuchsia-500" />
+            <span className="text-sm text-white/70">© {new Date().getFullYear()} Davidoff Media. All rights reserved.</span>
+          </div>
+          <div className="flex gap-4 text-xs text-white/60">
+            <a href="#" className="hover:text-white">Privacy</a>
+            <a href="#" className="hover:text-white">Terms</a>
+          </div>
         </div>
       </div>
-    </div>
-  )
+    </footer>
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <div className="min-h-screen bg-black text-white">
+      <Navbar />
+      <Hero />
+      <Services />
+      <Showcase />
+      <Contact />
+      <Footer />
+    </div>
+  );
+}
